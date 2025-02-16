@@ -2,7 +2,7 @@ import { Link, router } from "expo-router";
 import { FlatList, ScrollView, Text, View } from "react-native";
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from "react";
-import { Image } from expo
+import { Image } from "expo-image";
 
 export default function CardList() {
 
@@ -11,7 +11,8 @@ export default function CardList() {
     const { id } = useLocalSearchParams();
 
     useEffect(() => {
-        fetch(`https://lorcana.brybry.fr/api/sets/${id}/cards`)
+
+        fetch(`http://localhost/sets/{id}/cards`)
             .then((response) => {
                 return response.json();
             }).then((response) => {
